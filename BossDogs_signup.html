@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- HTML -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Boss Dogs - Sign Up</title>
+<!-- CSS -->
+    <style>
+    body {
+        background-color: black;
+        color: white;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Times New Roman', serif;
+    }
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+    .nav-left {
+        display: flex;
+        align-items: center;
+    }
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .heading {
+        font-size: 30px;
+        color: #ffffff;
+        text-shadow: 0 0 2px #00ffaa, 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa, 0 0 80px #00ffaa;
+        margin-right: 70px;
+    }
+    .nav-link {
+        margin-right: 30px;
+    }
+    a {
+        color: #110f0f;
+        font-size: 1.2rem;
+        text-shadow: 0 0 5px #fff, 0 0 5px #00ffaa, 0 0 8px #00ffaa, 0 0 16px #00ffaa;
+        text-decoration: none;
+        }
+    a:hover {
+        color: white;
+    }
+    hr {
+        border: none;
+        height: 4px;
+        background-color: #110f0f;
+        box-shadow: 0 0 5px #00ffaa, 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa;
+        width: 100%;
+    }
+    button {
+        font-family: 'Times New Roman', serif;
+        background-color: transparent;
+        color: #00ffaa;
+        text-shadow: 0 0 5px #fff, 0 0 5px #00ffaa, 0 0 8px #00ffaa, 0 0 16px #00ffaa;
+        cursor: pointer;
+    }
+    .signup-container {
+        width: 400px;
+        margin: 60px auto;
+        padding: 40px;
+        border: 2px solid #00ffaa;
+        border-radius: 15px;
+        box-shadow: 0 0 10px #00ffaa, 0 0 20px #00ffaa, 0 0 40px #00ffaa;
+        text-align: center;
+    }
+    .signup-container h1 {
+        color: white;
+        font-size: 35px;
+        text-shadow: 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa;
+        margin-bottom: 30px;
+    }
+    .input-box {
+        margin-bottom: 20px;
+    }
+    .input-box input {
+        width: 90%;
+        padding: 12px;
+        background-color: black;
+        border: 2px solid #00ffaa;
+        border-radius: 8px;
+        outline: none;
+        color: white;
+        font-size: 17px;
+        font-family: 'Times New Roman', serif;
+        box-shadow: 0 0 8px #00ffaa;
+    }
+    .input-box input::placeholder {
+        color: #00ffaa;
+    }
+    .input-box input:focus {
+        box-shadow: 0 0 5px #00ffaa, 0 0 15px #00ffaa, 0 0 25px #00ffaa;
+    }
+    #errorMessage {
+        color: #ff4d4d;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .signup-button {
+        width: 95%;
+        padding: 12px;
+        background-color: transparent;
+        border: 2px solid #00ffaa;
+        border-radius: 8px;
+        color: #00ffaa;
+        font-size: 18px;
+        font-family: 'Times New Roman', serif;
+        cursor: pointer;
+        text-shadow: 0 0 5px #fff, 0 0 8px #00ffaa, 0 0 16px #00ffaa;
+        box-shadow: 0 0 10px #00ffaa;
+    }
+    .signup-button:hover {
+        background-color: #00ffaa;
+        color: black;
+        text-shadow: none;
+        box-shadow: 0 0 10px #00ffaa, 0 0 25px #00ffaa, 0 0 40px #00ffaa;
+    }
+    .login-text {
+        margin-top: 25px;
+        color: white;
+        font-size: 17px;
+    }
+    .login-text a {
+        color: #00ffaa;
+    }
+    .logo img {
+        width: 50px; 
+        height: auto; 
+        vertical-align: middle; 
+        margin-right: 10px;
+    }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar-container">
+        <div class="nav-left">
+            <div class="logo">
+				<img src="bossdogslogo.png" alt="Insert Boss Dogs Logo">
+            </div>
+				<span class="heading">Boss Dogs</span>
+				<span class="nav-link"><a href="BossDogs_home.html">Home</a></span>
+				<span class="nav-link"><a href="BossDogs_products.html">Products</a></span>
+				<span class="nav-link"><a href="BossDogs_checkout.html">Checkout</a></span>
+				<span class="nav-link"><a href="BossDogs_about.html">About Us</a></span>
+				<span class="nav-link"><a href="BossDogs_contact.html">Contact Us</a></span>
+		</div>
+        <div class="nav-right">
+            <span class="nav-link"><a href="BossDogs_login.html" id="authLink"><button id="authButton">Log In</button></a></span>
+        </div>
+    </nav>
+</header>
+<hr>
+
+<div class="signup-container">
+    <h1>Sign Up</h1>
+    <form onsubmit="return checkSignup()">
+        <div class="input-box">
+            <input type="text" id="fullName" placeholder="Full Name" required>
+        </div>
+        <div class="input-box">
+            <input type="email" id="email" placeholder="Email Address" required>
+        </div>
+        <div class="input-box">
+            <input type="password" id="password" placeholder="Password (at least 6 characters)" minlength="6" required>
+        </div>
+        <div class="input-box">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        </div>
+
+        <div id="errorMessage"></div>
+
+        <button type="submit" class="signup-button">Create Account</button>
+    </form>
+
+    <div class="login-text">
+        Already have an account?
+        <a href="BossDogs_login.html">Log In</a>
+    </div>
+</div>
+<!-- JS -->
+<script>
+    const authLink = document.getElementById('authLink');
+    const authButton = document.getElementById('authButton');
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const isLoggedIn = localStorage.getItem('bossDogsIsLoggedIn') === 'true';
+
+        if (isLoggedIn) {
+            authButton.textContent = "Log Out";
+            authLink.removeAttribute('href');
+        }
+    });
+
+    authLink.addEventListener('click', (e) => {
+        const isLoggedIn = localStorage.getItem('bossDogsIsLoggedIn') === 'true';
+        if (isLoggedIn) {
+            e.preventDefault();
+            localStorage.removeItem('bossDogsIsLoggedIn');
+            location.reload();
+        }
+    });
+
+    function checkSignup() {
+        var name = document.getElementById("fullName").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+            document.getElementById("errorMessage").innerHTML = "Passwords do not match!";
+            return false;
+        }
+
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("bossDogsSavedEmail", email);
+
+        alert("Account created! Please log in.");
+        window.location.href = "login.html";
+
+        return false;
+    }
+</script>
+</body>
+</html>

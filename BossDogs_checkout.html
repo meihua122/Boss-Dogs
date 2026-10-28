@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!-- HTML -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Boss Dogs - Checkout</title>
+<!-- CSS -->
+    <style>
+    body {
+        background-color: black;
+        color: white;
+        margin: 0;
+        padding: 0;
+        font-family: 'Times New Roman', serif;
+    }
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+    .nav-left {
+        display: flex;
+        align-items: center;
+    }
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .nav-link {
+        margin-right: 30px;
+    }
+    .heading {
+        font-size: 30px;
+        color: #ffffff;
+        text-shadow: 0 0 2px #00ffaa, 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa, 0 0 80px #00ffaa;
+        margin-right: 70px;
+    }
+    a {
+        color: #110f0f;
+        font-size: 1.2rem;
+        text-shadow: 0 0 5px #fff, 0 0 5px #00ffaa, 0 0 8px #00ffaa, 0 0 16px #00ffaa;
+        text-decoration: none;
+        text-decoration-color: #110f0f;
+    }
+    hr {
+		border: none;
+		height: 4px;
+		background-color: #110f0f;
+		box-shadow: 0 0 5px #00ffaa, 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa;
+		width:100%;
+    }
+    button {
+        font-family: 'Times New Roman', serif;
+        background-color: transparent;
+        color: #00ffaa;
+        text-shadow: 0 0 5px #fff, 0 0 5px #00ffaa, 0 0 8px #00ffaa, 0 0 16px #00ffaa;
+        cursor: pointer;
+    }
+    .logo img {
+        width: 50px; 
+        height: auto; 
+        vertical-align: middle; 
+        margin-right: 10px;
+    }
+    .checkout-container {
+        width: min(1200px, calc(100% - 48px));
+        box-sizing: border-box;
+        margin: 40px auto;
+        padding: 30px;
+        border: 2px solid #00ffaa;
+        border-radius: 15px;
+        box-shadow: 0 0 10px #00ffaa, 0 0 20px #00ffaa, 0 0 40px #00ffaa;
+    }
+    h1 {
+        text-align: center;
+        font-size: 35px;
+        text-shadow: 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa;
+        margin-top: 0;
+    }
+    h2 {
+        font-size: 24px;
+        margin-top: 30px;
+        text-shadow: 0 0 5px #00ffaa, 0 0 10px #00ffaa;
+    }
+    .category-outline {
+        border: 2px solid #00ffaa;
+        border-radius: 18px;
+        box-shadow: 0 0 10px #00ffaa, 0 0 20px #00ffaa;
+        padding: 16px;
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        align-items: start;
+    }
+    .category-column {
+        min-width: 0;
+    }
+    .category-title {
+        color: #00ffaa;
+        text-shadow: 0 0 8px #00ffaa;
+        text-align: center;
+    }
+    .category-column h2 {
+        font-size: 20px;
+        margin: 8px 0 14px;
+        white-space: nowrap;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 18px;
+        table-layout: fixed;
+    }
+    td {
+        padding: 8px 3px;
+        border-bottom: 1px solid #00ffaa;
+        font-size: 13px;
+        vertical-align: top;
+        overflow-wrap: anywhere;
+    }
+    td.qty {
+        text-align: right;
+        width: 54px;
+    }
+    .product-price {
+        color: #00ffaa;
+        font-size: 12px;
+    }
+    input, select {
+        padding: 10px;
+        background-color: black;
+        border: 2px solid #00ffaa;
+        border-radius: 8px;
+        color: white;
+        font-size: 17px;
+        font-family: 'Times New Roman', serif;
+        box-shadow: 0 0 8px #00ffaa;
+        box-sizing: border-box;
+    }   
+    input::placeholder {
+        color: #00ffaa;
+    }
+    .category-column td input {
+        width: 48px;
+        padding: 6px 3px;
+        font-size: 14px;
+    }
+    .details input, .details select {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .total-container {
+        margin-top: 25px;
+        padding: 15px;
+        border: 1px solid #00ffaa;
+        border-radius: 8px;
+        box-shadow: 0 0 8px #00ffaa;
+    }
+    .total-container p {
+        font-size: 20px;
+        text-align: right;
+        margin: 5px 0;
+    }
+    #total {
+        color: #00ffaa;
+        font-weight: bold;
+    }
+    .checkout-container button[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #00ffaa;
+        border-radius: 8px;
+        font-size: 18px;
+        box-shadow: 0 0 10px #00ffaa;
+    }
+    .checkout-container button[type="submit"]:hover {
+        background-color: #00ffaa;
+        color: black;
+    }
+    </style>
+</head>
+<body class="container">
+	<header class="navbar">
+		<main class="neon-container">
+			<div id="header">
+				<nav class="navbar-container">
+					<div class="nav-left">
+            <div class="logo">
+				<img src="bossdogslogo.png" alt="Insert Boss Dogs Logo">
+            </div>
+						<span class="heading">Boss Dogs</span>
+						<span class="nav-link"><a href="BossDogs_home.html">Home</a></span>
+						<span class="nav-link"><a href="BossDogs_products.html">Products</a></span>
+						<span class="nav-link" style="text-decoration: underline; text-decoration-color: #110f0f;"><a href="BossDogs_checkout.html">Checkout</a></span>
+						<span class="nav-link"><a href="BossDogs_about.html">About Us</a></span>
+						<span class="nav-link"><a href="BossDogs_contact.html">Contact Us</a></span>
+					</div>
+					<div class="nav-right">
+						<span class="nav-link"><a href="BossDogs_login.html" id="authLink"><button id="authButton">Log In</button></a></span>
+						<span class="nav-link"><a href="BossDogs_signup.html"><button>Sign Up</button></a></span>
+					</div>
+				</nav>
+			</div>
+		</main>
+	</header>
+
+<hr>
+
+<div class="checkout-container">
+    <h1>Checkout</h1>
+    <form action="BossDogs_home.html" id="checkoutForm">
+
+        <h2>Choose your products</h2>
+
+        <div class="category-outline">
+            <!-- Consoles -->
+            <div class="category-column">
+                <h2 class="category-title">Consoles</h2>
+                <table>
+                    <tr>
+                        <td>Sony Playstation 5<br><span class="product-price">₱24,999.76</span></td>
+                        <td class="qty"><input type="number" name="ps5" min="0" step="1" value="0" aria-label="Sony Playstation 5 quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Xbox Series X<br><span class="product-price">₱27,999.67</span></td>
+                        <td class="qty"><input type="number" name="xboxseriesx" min="0" step="1" value="0" aria-label="Xbox Series X quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Nintendo Switch 2<br><span class="product-price">₱31,999.43</span></td>
+                        <td class="qty"><input type="number" name="switch2" min="0" step="1" value="0" aria-label="Nintendo Switch 2 quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Steam Deck<br><span class="product-price">₱32,999.23</span></td>
+                        <td class="qty"><input type="number" name="steamdeck" min="0" step="1" value="0" aria-label="Steam Deck quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Xbox Series S<br><span class="product-price">₱22,711.12</span></td>
+                        <td class="qty"><input type="number" name="xboxseriess" min="0" step="1" value="0" aria-label="Xbox Series S quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Sony Playstation 4<br><span class="product-price">₱26,899.76</span></td>
+                        <td class="qty"><input type="number" name="ps4" min="0" step="1" value="0" aria-label="Sony Playstation 4 quantity"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Controllers -->
+            <div class="category-column">
+                <h2 class="category-title">Controllers</h2>
+
+                <table>
+                    <tr>
+                        <td>PS5 Controller<br><span class="product-price">₱2,615.67</span></td>
+                        <td class="qty"><input type="number" name="ps5controller" min="0" step="1" value="0" aria-label="PS5 Controller quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Xbox Controller<br><span class="product-price">₱2,615.83</span></td>
+                        <td class="qty"><input type="number" name="xboxcontroller" min="0" step="1" value="0" aria-label="Xbox Controller quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Nintendo Joycon<br><span class="product-price">₱2,499.23</span></td>
+                        <td class="qty"><input type="number" name="joycon" min="0" step="1" value="0" aria-label="Nintendo Joycon quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Steam Controller<br><span class="product-price">₱7,490.43</span></td>
+                        <td class="qty"><input type="number" name="steamcontroller" min="0" step="1" value="0" aria-label="Steam Controller quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Playstation DualSense Edge<br><span class="product-price">₱12,490.99</span></td>
+                        <td class="qty"><input type="number" name="dualsenseedge" min="0" step="1" value="0" aria-label="Playstation DualSense Edge quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Xbox Elite Series 2 Core<br><span class="product-price">₱12,069.00</span></td>
+                        <td class="qty"><input type="number" name="xboxelitecore" min="0" step="1" value="0" aria-label="Xbox Elite Series 2 Core quantity"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Headsets -->
+            <div class="category-column">
+                <h2 class="category-title">Headsets</h2>
+                <table>
+                    <tr>
+                        <td>A4Tech HU-10<br><span class="product-price">₱520.99</span></td>
+                        <td class="qty"><input type="number" name="a4techhu10" min="0" step="1" value="0" aria-label="A4Tech HU-10 quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Razer BlackShark V2 X<br><span class="product-price">₱1,845.00</span></td>
+                        <td class="qty"><input type="number" name="blackshark" min="0" step="1" value="0" aria-label="Razer BlackShark V2 X quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Razer Nari Essential<br><span class="product-price">₱2,855.76</span></td>
+                        <td class="qty"><input type="number" name="nari" min="0" step="1" value="0" aria-label="Razer Nari Essential quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Hyper X Cloudstinger<br><span class="product-price">₱1,595.99</span></td>
+                        <td class="qty"><input type="number" name="cloudstinger" min="0" step="1" value="0" aria-label="Hyper X Cloudstinger quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>SteelSeries Arctis Nova Pro<br><span class="product-price">₱17,495.00</span></td>
+                        <td class="qty"><input type="number" name="arctisnovapro" min="0" step="1" value="0" aria-label="SteelSeries Arctis Nova Pro quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Logitech G Astro A50 X<br><span class="product-price">₱32,790.00</span></td>
+                        <td class="qty"><input type="number" name="astroa50x" min="0" step="1" value="0" aria-label="Logitech G Astro A50 X quantity"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Games -->
+            <div class="category-column">
+                <h2 class="category-title">Games</h2>
+                <table>
+                    <tr>
+                        <td>Elden Ring<br><span class="product-price">₱2,400.00</span></td>
+                        <td class="qty"><input type="number" name="eldenring" min="0" step="1" value="0" aria-label="Elden Ring quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>The Legend of Zelda: Tears of the Kingdom<br><span class="product-price">₱3,200.00</span></td>
+                        <td class="qty"><input type="number" name="zelda" min="0" step="1" value="0" aria-label="The Legend of Zelda quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Grand Theft Auto VI<br><span class="product-price">₱4,990.00</span></td>
+                        <td class="qty"><input type="number" name="gta6" min="0" step="1" value="0" aria-label="Grand Theft Auto VI quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Resident Evil 4 Remake<br><span class="product-price">₱2,200.00</span></td>
+                        <td class="qty"><input type="number" name="residentevil4" min="0" step="1" value="0" aria-label="Resident Evil 4 Remake quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Marvel's Spider-Man 2<br><span class="product-price">₱3,200.00</span></td>
+                        <td class="qty"><input type="number" name="spiderman2" min="0" step="1" value="0" aria-label="Marvel's Spider-Man 2 quantity"></td>
+                    </tr>
+                    <tr>
+                        <td>Minecraft<br><span class="product-price">₱1,200.00</span></td>
+                        <td class="qty"><input type="number" name="minecraft" min="0" step="1" value="0" aria-label="Minecraft quantity"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="total-container">
+            <p>Total Amount:</p>
+            <p id="total">₱0.00</p>
+        </div>
+
+        <h2>Your details</h2>
+
+        <div class="details">
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <input type="text" name="address" placeholder="Delivery Address" required>
+
+            <select name="payment">
+                <option>Cash on Delivery</option>
+                <option>GCash</option>
+                <option>Credit / Debit Card</option>
+            </select>
+        </div>
+
+        <button type="submit">Place Order</button>
+    </form>
+</div>
+<!-- JS -->
+<script>
+const authLink = document.getElementById('authLink');
+const authButton = document.getElementById('authButton');
+
+window.addEventListener('DOMContentLoaded', () => {
+    const isLoggedIn = localStorage.getItem('bossDogsIsLoggedIn') === 'true';
+
+    if (isLoggedIn) {
+        authButton.textContent = "Log Out";
+        authLink.removeAttribute('href');
+    }
+});
+
+authLink.addEventListener('click', (e) => {
+    const isLoggedIn = localStorage.getItem('bossDogsIsLoggedIn') === 'true';
+    if (isLoggedIn) {
+        e.preventDefault();
+        localStorage.removeItem('bossDogsIsLoggedIn');
+        location.reload();
+    }
+});
+
+const prices = {
+    ps5: 24999.76,
+    xboxseriesx: 27999.67,
+    switch2: 31999.43,
+    steamdeck: 32999.23,
+    xboxseriess: 22711.12,
+    ps4: 26899.76,
+
+    ps5controller: 2615.67,
+    xboxcontroller: 2615.83,
+    joycon: 2499.23,
+    steamcontroller: 7490.43,
+    dualsenseedge: 12490.99,
+    xboxelitecore: 12069.00,
+
+    a4techhu10: 520.99,
+    blackshark: 1845.00,
+    nari: 2855.76,
+    cloudstinger: 1595.99,
+    arctisnovapro: 17495.00,
+    astroa50x: 32790.00,
+
+    eldenring: 2400.00,
+    zelda: 3200.00,
+    gta6: 4990.00,
+    residentevil4: 2200.00,
+    spiderman2: 3200.00,
+    minecraft: 1200.00
+};
+
+function calculateTotal() {
+    let total = 0;
+
+    const products = document.querySelectorAll('input[type="number"]');
+
+    products.forEach(function(product) {
+        let quantity = Number(product.value);
+
+        if (!Number.isInteger(quantity) || quantity < 0) {
+            quantity = 0;
+        }
+
+        total += prices[product.name] * quantity;
+    });
+
+    total = Math.round((total + Number.EPSILON) * 100) / 100;
+
+    document.getElementById("total").textContent =
+        "₱" + total.toLocaleString("en-PH", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+    return total;
+}
+
+const quantityInputs = document.querySelectorAll('input[type="number"]');
+
+quantityInputs.forEach(function(input) {
+    input.addEventListener("input", calculateTotal);
+});
+
+document.getElementById("checkoutForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const total = calculateTotal();
+
+    if (total <= 0) {
+        alert("Please select at least one product before placing your order.");
+        return;
+    }
+
+    const customerName = document.querySelector('input[name="fullname"]').value;
+    const paymentMethod = document.querySelector('select[name="payment"]').value;
+
+    alert(
+        "Order Confirmation!\n\n" +
+        "Customer: " + customerName + "\n" +
+        "Total Amount: ₱" +
+        total.toLocaleString("en-PH", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }) + "\n" +
+        "Payment Method: " + paymentMethod +
+        "\n\nThank you for shopping at Boss Dog's!"
+    );
+});
+
+calculateTotal();
+</script>
+</body>
+</html>

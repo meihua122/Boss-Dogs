@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!-- HTML -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Boss Dogs - Products</title>
+<!-- CSS -->
+	<style>
+	body {
+		background-color: black;
+		color: black;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.navbar-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px 20px;
+	}
+	.nav-left {
+		display: flex;
+		align-items: center;
+	}
+	.nav-right {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+	.product-card {
+		flex: 0 0 260px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	.product-card img {
+		display: block;
+		margin-bottom: 12px;
+		width: auto; 
+		height: 250px; 
+		object-fit: cover; 
+		text-align: center;
+	}
+	.product-list {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 60px;
+		margin-top: 50px;
+		padding: 0 20px 20px 20px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		scroll-snap-type: x proximity;
+		scrollbar-color: #00ffaa #110f0f;
+	}
+	.product-list .product-card {
+		scroll-snap-align: start;
+	}
+	.product-list::-webkit-scrollbar {
+		height: 8px;
+	}
+	.product-list::-webkit-scrollbar-track {
+		background: #110f0f;
+	}
+	.product-list::-webkit-scrollbar-thumb {
+		background: #00ffaa;
+		border-radius: 8px;
+		box-shadow: 0 0 8px #00ffaa;
+	}
+	.nav-link {
+		margin-right: 30px;
+	}
+	hr {
+		border: none;
+		height: 4px;
+		background-color: #110f0f;
+		box-shadow: 0 0 5px #00ffaa, 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa;
+		width:100%;
+    }
+	p, div, a {
+		font-size: 1.2rem;
+		color: #110f0f;
+		text-shadow: 0 0 5px #fff, 0 0 5px #00ffaa, 0 0 8px #00ffaa, 0 0 16px #00ffaa;
+		text-decoration: none;
+	}
+	.heading {
+		font-size: 30px;
+		color: #ffffff;
+		text-shadow: 0 0 2px #00ffaa, 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa, 0 0 80px #00ffaa;
+		margin-right: 70px;
+	}
+	.mainlogo {
+  	    display: block;
+  	    width: 100%;
+        max-width: 1800px;
+  	    height: auto;
+  	    margin-left: auto;
+  	    margin-right: auto;
+	}
+	.product-card .product-name {
+		display: block;
+		margin-top: 8px;
+	}
+    button {
+  	    font-family: 'Times New Roman', serif;
+        background-color: transparent;
+        color: #00ffaa;
+        text-shadow: 0 0 5px #fff, 0 0 5px #00ffaa, 0 0 8px #00ffaa, 0 0 16px #00ffaa;
+        cursor: pointer;
+    }
+    .logo img {
+        width: 50px; 
+        height: auto; 
+        vertical-align: middle; 
+        margin-right: 10px;
+    }
+	</style>
+</head>
+<body class="container">
+	<header class="navbar">
+		<main class="neon-container">
+			<div id="header">
+				<nav class="navbar-container">
+					<div class="nav-left">
+            <div class="logo">
+				<img src="bossdogslogo.png" alt="Insert Boss Dogs Logo">
+            </div>
+						<span class="heading">Boss Dogs</span>
+						<span class="nav-link"><a href="BossDogs_home.html">Home</a></span>
+						<span class="nav-link" style="text-decoration: underline"><a href="products.html">Products</a></span>
+						<span class="nav-link"><a href="BossDogs_checkout.html">Checkout</a></span>
+						<span class="nav-link"><a href="BossDogs_about.html">About Us</a></span>
+						<span class="nav-link"><a href="BossDogs_contact.html">Contact Us</a></span>
+					</div>
+					<div class="nav-right">
+						<span class="nav-link"><a href="BossDogs_login.html" id="authLink"><button id="authButton">Log In</button></a></span>
+						<span class="nav-link"><a href="BossDogs_signup.html"><button>Sign Up</button></a></span>
+					</div>
+				</nav>
+			</div>
+		</main>
+	</header>
+<hr>
+  <!-- Row 1: Console -->
+    <div class="product-list">
+    <!-- 1st -->
+        <div class="product-card" id="product-consoles">
+            <img src="sonyIMG.png" alt="sonyIMG">
+            <span class="product-name">Sony Playstation 5</span>
+            <span class="product-name">₱24,999.76</span>
+        </div>
+    <!-- 2nd -->
+        <div class="product-card" id="product-controllers">
+            <img src="xboxIMG.png" alt="xboxIMG">
+            <span class="product-name">Xbox Series X</span>
+            <span class="product-name">₱27,999.67</span>
+        </div>
+    <!-- 3rd -->
+        <div class="product-card" id="product-headsets">
+            <img src="switchIMG.png" alt="switchIMG">
+            <span class="product-name">Nintendo Switch 2</span>
+            <span class="product-name">₱31,999.43</span>
+        </div>
+    <!-- 4th -->
+        <div class="product-card" id="product-games">
+            <img src="steamdeckIMG.png" alt="steamdeckIMG">
+            <span class="product-name">Steam Deck</span>
+            <span class="product-name">₱32,999.23</span>
+        </div>
+    <!-- 5th -->
+        <div class="product-card" id="product-13">
+            <img src="xboxseriesS.png" alt="xboxseriesS">
+            <span class="product-name">Xbox Series S</span>
+            <span class="product-name">₱22,711.12</span>
+        </div>
+    <!-- 6th -->
+        <div class="product-card" id="product-14">
+            <img src="sonyps4.png" alt="sonyps4">
+            <span class="product-name">Sony Playstation 4</span>
+            <span class="product-name">₱26,899.76</span>
+        </div>
+    </div>
+
+<hr>
+    <!-- Row 2: Controller -->
+    <div class="product-list">
+    <!-- 1st -->
+        <div class="product-card" id="product-5">
+            <img src="ps5controller.png" alt="ps5controller">
+            <span class="product-name">PS5 Controller</span>
+            <span class="product-name">₱2,615.67</span>
+        </div>
+    <!-- 2nd -->
+        <div class="product-card" id="product-6">
+            <img src="xboxcontroller.png" alt="xboxcontroller">
+            <span class="product-name">Xbox Controller</span>
+            <span class="product-name">₱2,615.83</span>
+        </div>
+    <!-- 3rd -->
+        <div class="product-card" id="product-7">
+            <img src="nintendojoycon.png" alt="nintendojoycon">
+            <span class="product-name">Nintendo Joycon</span>
+            <span class="product-name">₱2,499.23</span>
+        </div>
+    <!-- 4th -->
+        <div class="product-card" id="product-8">
+            <img src="steamcontroller.png" alt="steamcontroller">
+            <span class="product-name">Steam Controller</span>
+            <span class="product-name">₱7,490.43</span>
+        </div>
+    <!-- 5th -->
+        <div class="product-card" id="product-15">
+            <img src="psDualSenseEdge.png" alt="psDualSenseEdge">
+            <span class="product-name">Playstation DualSense Edge</span>
+            <span class="product-name">₱12,490.99</span>
+        </div>
+    <!-- 6th -->
+        <div class="product-card" id="product-16">
+            <img src="xboxEliteSeries2core.png" alt="xboxEliteSeries2core">
+            <span class="product-name">Xbox Elite Series 2 Core</span>
+            <span class="product-name">₱12,069.00</span>
+        </div>
+    </div>
+
+<hr>
+    <!-- Row 3 Headsets -->
+    <div class="product-list">
+    <!-- 1st -->
+        <div class="product-card" id="product-9">
+            <img src="a4techhu10.png" alt="a4techhu10">
+            <span class="product-name">A4Tech HU-10</span>
+            <span class="product-name">₱520.99</span>
+        </div>
+    <!-- 2nd -->
+        <div class="product-card" id="product-10">
+            <img src="razerblacksharkv2x.png" alt="razerblacksharkv2x">
+            <span class="product-name">Razer BlackShark V2 X</span>
+            <span class="product-name">₱1,845.00</span>
+        </div>
+    <!-- 3rd -->
+        <div class="product-card" id="product-11">
+            <img src="razernariessential.png" alt="razernariessential">
+            <span class="product-name">Razer Nari Essential</span>
+            <span class="product-name">₱2,855.76</span>
+        </div>
+    <!-- 4th -->
+        <div class="product-card" id="product-12">
+            <img src="hyperxcloudstinger.png" alt="hyperxcloudstinger">
+            <span class="product-name">Hyper X Cloudstinger</span>
+            <span class="product-name">₱1,595.99</span>
+        </div>
+    <!-- 5th -->
+        <div class="product-card" id="product-17">
+            <img src="stealseriesarctics.png" alt="stealseriesarctics">
+            <span class="product-name">SteelSeries Arctis Nova Pro</span>
+            <span class="product-name">₱17,495.00</span>
+        </div>
+    <!-- 6th -->
+          <div class="product-card" id="product-18">
+            <img src="astroA50x.png" alt="astroA50x">
+            <span class="product-name">Logitech G Astro A50 X</span>
+            <span class="product-name">₱32,790.00</span>
+          </div>
+    </div>
+<hr>
+    <!-- Row 4 Games -->
+    <div class="product-list">
+    <!-- 1st -->
+        <div class="product-card" id="product-9">
+            <img src="eldenring.png" alt="eldenring">
+            <span class="product-name">Elden Ring</span>
+            <span class="product-name">₱2,400.00</span>
+        </div>
+    <!-- 2nd -->    
+        <div class="product-card" id="product-10">
+            <img src="thelegendofzelda.png" alt="thelegendofzelda">
+            <span class="product-name">The Legend of Zelda: Tears of the Kingdom</span>
+            <span class="product-name">₱3,200.00</span>
+        </div>
+    <!-- 3rd -->    
+        <div class="product-card" id="product-11">
+            <img src="gta6.png" alt="gta6">
+            <span class="product-name">Grand Theft Auto VI</span>
+            <span class="product-name">₱4,990.00</span>
+        </div>
+    <!-- 4th -->    
+        <div class="product-card" id="product-12">
+            <img src="re4RE.png" alt="re4RE">
+            <span class="product-name">Resident Evil 4 Remake</span>
+            <span class="product-name">₱2,200.00</span>
+        </div>
+    <!-- 5th -->    
+        <div class="product-card" id="product-17">
+            <img src="spiderman2.png" alt="spiderman2">
+            <span class="product-name">Marvel's Spider-Man 2</span>
+            <span class="product-name">₱3,200.00</span>
+        </div>
+    <!-- 6th -->
+        <div class="product-card" id="product-18">
+            <img src="minecraft.png" alt="minecraft">
+            <span class="product-name">Minecraft</span>
+            <span class="product-name">₱1,200.00</span>
+        </div>
+    </div>
+<!-- JS -->
+<script>
+    const authLink = document.getElementById('authLink');
+    const authButton = document.getElementById('authButton');
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const isLoggedIn = localStorage.getItem('bossDogsIsLoggedIn') === 'true';
+
+        if (isLoggedIn) {
+            authButton.textContent = "Log Out";
+            authLink.removeAttribute('href');
+        }
+    });
+
+    authLink.addEventListener('click', (e) => {
+        const isLoggedIn = localStorage.getItem('bossDogsIsLoggedIn') === 'true';
+        if (isLoggedIn) {
+            e.preventDefault();
+            localStorage.removeItem('bossDogsIsLoggedIn');
+            location.reload();
+        }
+    });
+</script>
+</body>
+</html>

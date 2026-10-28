@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- HTML -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Boss Dogs - Contact Us</title>
+<!-- CSS -->
+	<style>
+	body {
+		background-color: black;
+		color: black;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.navbar-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px 20px;
+	}
+	.nav-left {
+		display: flex;
+		align-items: center;
+	}
+	.nav-right {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+	.nav-link {
+		margin-right: 30px;
+	}
+	hr {
+		border: none;
+		height: 4px;
+		background-color: #110f0f;
+		box-shadow: 0 0 5px #00ffaa, 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa;
+		width:100%;
+    }
+	p, div, a {
+		font-size: 1.2rem;
+		color: #110f0f;
+		text-shadow: 0 0 5px #fff, 0 0 5px #00ffaa, 0 0 8px #00ffaa, 0 0 16px #00ffaa;
+		text-decoration: none;
+	}
+	.heading {
+		font-size: 30px;
+		color: #ffffff;
+		text-shadow: 0 0 2px #00ffaa, 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa, 0 0 80px #00ffaa;
+		margin-right: 70px;
+	}
+	.mainlogo {
+        display: block;
+        width: 100%;
+        max-width: 1800px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+	}
+    button {
+  	    font-family: 'Times New Roman', serif;
+        background-color: transparent;
+        color: #00ffaa;
+        text-shadow: 0 0 5px #fff, 0 0 5px #00ffaa, 0 0 8px #00ffaa, 0 0 16px #00ffaa;
+        cursor: pointer;
+    }
+    .contact-text {
+  	    margin-left: 300px;
+        font-size: 30px;
+    }
+    .logo img {
+        width: 50px; 
+        height: auto; 
+        vertical-align: middle; 
+        margin-right: 10px;
+    }
+	</style>
+</head>
+<body class="container">
+	<header class="navbar">
+		<main class="neon-container">
+			<div id="header">
+				<nav class="navbar-container">
+					<div class="nav-left">
+            <div class="logo">
+				<img src="bossdogslogo.png" alt="Insert Boss Dogs Logo">
+            </div>
+						<span class="heading">Boss Dogs</span>
+						<span class="nav-link"><a href="BossDogs_home.html">Home</a></span>
+						<span class="nav-link"><a href="BossDogs_products.html">Products</a></span>
+						<span class="nav-link"><a href="BossDogs_checkout.html">Checkout</a></span>
+						<span class="nav-link"><a href="BossDogs_about.html">About Us</a></span>
+						<span class="nav-link" style="text-decoration: underline"><a href="BossDogs_contact.html">Contact Us</a></span>
+					</div>
+					<div class="nav-right">
+						<span class="nav-link"><a href="BossDogs_login.html" id="authLink"><button id="authButton">Log In</button></a></span>
+						<span class="nav-link"><a href="BossDogs_signup.html"><button>Sign Up</button></a></span>
+					</div>
+				</nav>
+			</div>
+		</main>
+	</header>
+
+<hr>
+
+    <div style="display: flex; justify-content: center;">
+        <img src="mainlogobossdogs.png" alt="Insert Logo Here">
+    </div>
+
+<p class="contact-text" style="font-size: 60px; margin-left: 570px; color:white">--Get In Touch With Boss Dogs--</p>
+
+<div class="contact-grid">
+    <div class="contact-card">
+        <h3 class="contact-text" style="color:white">Phone Support</h3>
+        <p class="contact-text"><strong>Main Line:</strong><br> +1 (800) 555-BOSS</p>
+        <p class="contact-text"><strong>Customer Care:</strong><br> +1 (800) 555-3647</p>
+    </div>
+
+    <div class="contact-card">
+        <h3 class="contact-text" style="color:white">Email Us</h3>
+        <p class="contact-text"><strong>General Inquiries:</strong><br> infobossdogs@bossdogs.com</p>
+        <p class="contact-text"><strong>Sales & Orders:</strong><br> supportbossdogs@bossdogs.com</p>
+    </div>
+
+    <div class="contact-card">
+  		<h3 class="contact-text" style="color:white">Headquarters</h3>
+        <p class="contact-text">
+        123 Cyberpunk 2077 Street<br>
+        Suite 404, Tech District<br>
+        Quezon City, CA 90001
+        </p>
+    </div>
+
+    <div class="contact-card">
+        <h3 class="contact-text" style="color:white">Business Hours</h3>
+        <p class="contact-text"><strong>Monday - Friday:</strong><br> 9:00 AM - 8:00 PM EST</p>
+        <p class="contact-text"><strong>Saturday - Sunday:</strong><br> 10:00 AM - 6:00 PM EST</p>
+    </div>
+</div>
+<!-- JS -->
+<script>
+    const authLink = document.getElementById('authLink');
+    const authButton = document.getElementById('authButton');
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const isLoggedIn = localStorage.getItem('bossDogsIsLoggedIn') === 'true';
+
+        if (isLoggedIn) {
+            authButton.textContent = "Log Out";
+            authLink.removeAttribute('href');
+        }
+    });
+
+    authLink.addEventListener('click', (e) => {
+        const isLoggedIn = localStorage.getItem('bossDogsIsLoggedIn') === 'true';
+        if (isLoggedIn) {
+            e.preventDefault();
+            localStorage.removeItem('bossDogsIsLoggedIn');
+            location.reload();
+        }
+    });
+</script>
+</body>
+</html>

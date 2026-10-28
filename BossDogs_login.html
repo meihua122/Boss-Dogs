@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!-- HTML -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Boss Dogs - Log In</title>
+<!-- CSS -->
+    <style>
+    body {
+        background-color: black;
+        color: white;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Times New Roman', serif;
+    }
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+    .nav-left {
+        display: flex;
+        align-items: center;
+    }
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .heading {
+        font-size: 30px;
+        color: #ffffff;
+        text-shadow: 0 0 2px #00ffaa, 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa, 0 0 80px #00ffaa;
+        margin-right: 70px;
+    }
+    .nav-link {
+        margin-right: 30px;
+    }
+    a {
+        color: #110f0f;
+        font-size: 1.2rem;
+        text-shadow: 0 0 5px #fff, 0 0 5px #00ffaa, 0 0 8px #00ffaa, 0 0 16px #00ffaa;
+        text-decoration: none;
+    }
+    a:hover {
+        color: white;
+    }
+    hr {
+        border: none;
+        height: 4px;
+        background-color: #110f0f;
+        box-shadow: 0 0 5px #00ffaa, 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa;
+        width: 100%;
+    }
+    .login-container {
+        width: 400px;
+        margin: 80px auto;
+        padding: 40px;
+        border: 2px solid #00ffaa;
+        border-radius: 15px;
+        box-shadow: 0 0 10px #00ffaa, 0 0 20px #00ffaa, 0 0 40px #00ffaa;
+        text-align: center;
+    }
+    .login-container h1 {
+        color: white;
+        font-size: 35px;
+        text-shadow: 0 0 5px #00ffaa, 0 0 10px #00ffaa, 0 0 20px #00ffaa;
+        margin-bottom: 30px;
+    }
+    .input-box {
+        margin-bottom: 20px;
+    }
+    .input-box input {
+        width: 90%;
+        padding: 12px;
+        background-color: black;
+        border: 2px solid #00ffaa;
+        border-radius: 8px;
+        outline: none;
+        color: white;
+        font-size: 17px;
+        font-family: 'Times New Roman', serif;
+        box-shadow: 0 0 8px #00ffaa;
+    }
+    .input-box input::placeholder {
+        color: #00ffaa;
+    }
+    .input-box input:focus {
+        box-shadow: 0 0 5px #00ffaa, 0 0 15px #00ffaa, 0 0 25px #00ffaa;
+    }
+    .remember-box {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+        margin-left: 5%;
+        color: white;
+        font-size: 15px;
+        gap: 10px;
+        font-family: 'Times New Roman', serif;
+    }
+    .remember-box input[type="checkbox"] {
+        accent-color: #00ffaa;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+    .login-button {
+        width: 95%;
+        padding: 12px;
+        background-color: transparent;
+        border: 2px solid #00ffaa;
+        border-radius: 8px;
+        color: #00ffaa;
+        font-size: 18px;
+        font-family: 'Times New Roman', serif;
+        cursor: pointer;
+        text-shadow: 0 0 5px #fff, 0 0 8px #00ffaa, 0 0 16px #00ffaa;
+        box-shadow: 0 0 10px #00ffaa;
+    }
+    .login-button:hover {
+        background-color: #00ffaa;
+        color: black;
+        text-shadow: none;
+        box-shadow: 0 0 10px #00ffaa, 0 0 25px #00ffaa, 0 0 40px #00ffaa;
+    }
+    .signup-text {
+        margin-top: 25px;
+        color: white;
+        font-size: 17px;
+    }
+    .signup-text a {
+        color: #00ffaa;
+    }
+    .logo img {
+        width: 50px; 
+        height: auto; 
+        vertical-align: middle; 
+        margin-right: 10px;
+    }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar-container">
+        <div class="nav-left">
+            <div class="logo">
+				<img src="bossdogslogo.png" alt="Insert Boss Dogs Logo">
+            </div>
+				<span class="heading">Boss Dogs</span>
+				<span class="nav-link"><a href="BossDogs_home.html">Home</a></span>
+				<span class="nav-link"><a href="BossDogs_products.html">Products</a></span>
+				<span class="nav-link"><a href="BossDogs_checkout.html">Checkout</a></span>
+				<span class="nav-link"><a href="BossDogs_about.html">About Us</a></span>
+				<span class="nav-link"><a href="BossDogs_contact.html">Contact Us</a></span>
+		</div>
+    </nav>
+</header>
+<hr>
+<div class="login-container">
+    <h1 id="containerTitle">Log In</h1>
+    <form id="loginForm">
+        <div class="input-box" id="emailBox">
+            <input type="email" id="emailInput" placeholder="Email Address" required>
+        </div>
+        <div class="input-box" id="passwordBox">
+            <input type="password" placeholder="Password" required>
+        </div>
+        
+        <div class="remember-box" id="rememberBox">
+            <input type="checkbox" id="rememberMeCheckbox">
+            <label for="rememberMeCheckbox">Remember Me</label>
+        </div>
+
+        <button type="submit" class="login-button">
+          <a href="BossDogs_home.html" id="loginLink">Log In</a>
+        </button>
+    </form>
+    <div class="signup-text" id="signupTextContainer">
+        Don't have an account?
+        <a href="signup.html">Sign Up</a>
+    </div>
+</div>
+<!-- JS -->
+<script>
+    const emailInput = document.getElementById('emailInput');
+    const rememberMeCheckbox = document.getElementById('rememberMeCheckbox');
+    const loginForm = document.getElementById('loginForm');
+    const loginLink = document.getElementById('loginLink');
+    const containerTitle = document.getElementById('containerTitle');
+    const emailBox = document.getElementById('emailBox');
+    const passwordBox = document.getElementById('passwordBox');
+    const rememberBox = document.getElementById('rememberBox');
+    const signupTextContainer = document.getElementById('signupTextContainer');
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedEmail = localStorage.getItem('bossDogsSavedEmail');
+        if (savedEmail) {
+            emailInput.value = savedEmail;
+            rememberMeCheckbox.checked = true;
+        }
+
+        const isLoggedIn = localStorage.getItem('bossDogsIsLoggedIn') === 'true';
+        if (isLoggedIn) {
+            setLogOutState();
+        }
+    });
+    function setLogOutState() {
+        containerTitle.textContent = "Welcome Back!";
+        emailBox.style.display = 'none';
+        passwordBox.style.display = 'none';
+        rememberBox.style.display = 'none';
+        signupTextContainer.style.display = 'none';
+        emailInput.removeAttribute('required');
+        
+        loginLink.textContent = "Log Out";
+        loginLink.removeAttribute('href');
+    }
+    loginForm.addEventListener('submit', (e) => {
+        const isLoggedIn = localStorage.getItem('bossDogsIsLoggedIn') === 'true';
+
+        if (isLoggedIn) {
+            e.preventDefault();
+            localStorage.removeItem('bossDogsIsLoggedIn');
+            location.reload();
+        } else {
+            if (rememberMeCheckbox.checked) {
+                localStorage.setItem('bossDogsSavedEmail', emailInput.value);
+            } else {
+                localStorage.removeItem('bossDogsSavedEmail');
+            }
+            localStorage.setItem('bossDogsIsLoggedIn', 'true');
+        }
+    });
+</script>
+
+</body>
+</html>
